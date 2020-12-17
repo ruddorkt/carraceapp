@@ -90,7 +90,9 @@ namespace CarRaceLibrary
                 // update car fuel
                 if (lapDistance != 0 && lapSeconds % 10 == 0)
                 {
-                    _carFuel = (lapDistance * _carConfiguration.FuelConsumptionPerLap) / _raceTrack.LapDistrance;
+                    var consumed = (lapDistance * _carConfiguration.FuelConsumptionPerLap) / _raceTrack.LapDistrance;
+                    _carFuel = _carFuel - consumed;
+                    Console.WriteLine($"consume: {consumed}, capacity: {FuelLevel}, carFuel {_carFuel}");
                     if ((int)_carFuel > _carConfiguration.FuelCapacity)
                     {
                         throw new InvalidOperationException("car fuel exception");
