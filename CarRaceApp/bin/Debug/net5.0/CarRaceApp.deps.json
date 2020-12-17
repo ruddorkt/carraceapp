@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "CarRaceApp/1.0.0": {
+        "dependencies": {
+          "CarRaceLibrary": "1.0.0"
+        },
+        "runtime": {
+          "CarRaceApp.dll": {}
+        }
+      },
+      "CarRaceLibrary/1.0.0": {
+        "runtime": {
+          "CarRaceLibrary.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CarRaceApp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CarRaceLibrary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

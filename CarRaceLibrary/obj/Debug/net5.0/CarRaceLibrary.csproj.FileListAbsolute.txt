@@ -1,0 +1,11 @@
+C:\Users\ruddo\source\repos\CarRaceApp\CarRaceLibrary\bin\Debug\net5.0\CarRaceLibrary.deps.json
+C:\Users\ruddo\source\repos\CarRaceApp\CarRaceLibrary\bin\Debug\net5.0\CarRaceLibrary.dll
+C:\Users\ruddo\source\repos\CarRaceApp\CarRaceLibrary\bin\Debug\net5.0\ref\CarRaceLibrary.dll
+C:\Users\ruddo\source\repos\CarRaceApp\CarRaceLibrary\bin\Debug\net5.0\CarRaceLibrary.pdb
+C:\Users\ruddo\source\repos\CarRaceApp\CarRaceLibrary\obj\Debug\net5.0\CarRaceLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ruddo\source\repos\CarRaceApp\CarRaceLibrary\obj\Debug\net5.0\CarRaceLibrary.AssemblyInfoInputs.cache
+C:\Users\ruddo\source\repos\CarRaceApp\CarRaceLibrary\obj\Debug\net5.0\CarRaceLibrary.AssemblyInfo.cs
+C:\Users\ruddo\source\repos\CarRaceApp\CarRaceLibrary\obj\Debug\net5.0\CarRaceLibrary.csproj.CoreCompileInputs.cache
+C:\Users\ruddo\source\repos\CarRaceApp\CarRaceLibrary\obj\Debug\net5.0\CarRaceLibrary.dll
+C:\Users\ruddo\source\repos\CarRaceApp\CarRaceLibrary\obj\Debug\net5.0\ref\CarRaceLibrary.dll
+C:\Users\ruddo\source\repos\CarRaceApp\CarRaceLibrary\obj\Debug\net5.0\CarRaceLibrary.pdb
