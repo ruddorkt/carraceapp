@@ -100,3 +100,5 @@ C:\Users\ruddo\source\repos\CarRaceApp\CarRaceXUnitTest\obj\Debug\net5.0\CarRace
 C:\Users\ruddo\source\repos\CarRaceApp\CarRaceXUnitTest\obj\Debug\net5.0\ref\CarRaceXUnitTest.dll
 C:\Users\ruddo\source\repos\CarRaceApp\CarRaceXUnitTest\obj\Debug\net5.0\CarRaceXUnitTest.pdb
 C:\Users\ruddo\source\repos\CarRaceApp\CarRaceXUnitTest\obj\Debug\net5.0\CarRaceXUnitTest.genruntimeconfig.cache
+C:\Users\ruddo\source\repos\CarRaceApp\CarRaceXUnitTest\bin\Debug\net5.0\Castle.Core.dll
+C:\Users\ruddo\source\repos\CarRaceApp\CarRaceXUnitTest\bin\Debug\net5.0\Moq.dll

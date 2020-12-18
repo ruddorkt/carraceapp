@@ -35,7 +35,7 @@ namespace CarRaceXUnitTest
             TestBase.GetRaceTrackEntity(out lapDistrance, out numberOfLaps, out timeToPitstop, out rt);
             rt.LapDistrance += 60;
             rt.NumberOfLaps += 20;
-            RaceTrack.TimeToPitstop.Add(timeToPitstop);
+            RaceTrack.TimeToPitstop = new TimeSpan(timeToPitstop.Ticks * 2);
             // assert
             Assert.Equal(lapDistrance + 60, rt.LapDistrance);
             Assert.Equal(numberOfLaps + 20, rt.NumberOfLaps);

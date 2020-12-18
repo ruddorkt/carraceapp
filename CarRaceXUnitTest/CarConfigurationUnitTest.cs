@@ -49,12 +49,13 @@ namespace CarRaceXUnitTest
             // act
             TestBase.GetCarConfigurationEntity(raceTrack, out trackId, out fuelCapacity, out timePerLap, out fuelConsumptionPerLap, out carConfig);
             carConfig.FuelCapacity += 10;
-            carConfig.TimePerLap.Add(timePerLap);
+            var timePerLapValue = new TimeSpan(timePerLap.Ticks * 2);
+            carConfig.TimePerLap = timePerLapValue;
             carConfig.FuelConsumptionPerLap += 20;
             // assert
             Assert.Equal(trackId, carConfig.RaceTrack.TrackId);
             Assert.Equal(fuelCapacity + 10, carConfig.FuelCapacity);
-            Assert.Equal(timePerLap.Add(timePerLap), carConfig.TimePerLap);
+            Assert.Equal(timePerLapValue, carConfig.TimePerLap);
             Assert.Equal(fuelConsumptionPerLap + 20, carConfig.FuelConsumptionPerLap);
             Assert.IsType<Guid>(carConfig.ConfigurationId);
         }
