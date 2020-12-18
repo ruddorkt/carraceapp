@@ -62,6 +62,8 @@ namespace CarRaceLibrary
             long i = 0;
             double lapSeconds = 0d;
             double lapDistance = 0d;
+
+
             await Task.Run(() =>
             {
                 Process(ref isRuning, ref i, ref lapSeconds, ref lapDistance);
@@ -75,58 +77,106 @@ namespace CarRaceLibrary
             _status = IRaceCar.Status.Idle;
             lapStopWatch.Start();
             _status = IRaceCar.Status.Start;
+
+            double prevLapSeconds = 0d;
+            double prevLapDistance = 0d;
+
             while (isRuning)
             {
-                i++;
+                i++;                
+                _status = IRaceCar.Status.Running;  
                 lapSeconds = ((double)lapStopWatch.ElapsedMilliseconds) / 1000d;
-                lapDistance = lapSeconds * _speed;
+                lapDistance = lapSeconds * _speed;                
+                if (lapSeconds > 0 && lapSeconds > prevLapSeconds + 1)
+                { 
+
+                    prevLapSeconds = lapSeconds;
+                }
                 if (i % 100000000 == 0)
                 {
-                    Console.WriteLine($"car fuel {_carFuel}");
-                    Console.WriteLine($"Lap Distance {lapDistance}");
-                    Console.WriteLine($"Lap Seconds {lapSeconds}");
-                    Console.WriteLine($"Lap Count {_lapCount}");
-                }
-                // update car fuel
-                if (lapDistance != 0 && lapSeconds % 10 == 0)
-                {
-                    var consumed = (lapDistance * _carConfiguration.FuelConsumptionPerLap) / _raceTrack.LapDistrance;
-                    _carFuel = _carFuel - consumed;
-                    Console.WriteLine($"consume: {consumed}, capacity: {FuelLevel}, carFuel {_carFuel}");
-                    if ((int)_carFuel > _carConfiguration.FuelCapacity)
-                    {
-                        throw new InvalidOperationException("car fuel exception");
-                    }
-                }
-                _status = IRaceCar.Status.Running;
-                // Car is fuelled up to the same level each pitstop
-                if (lapSeconds > 1 && ((int)lapSeconds) % (int)RaceTrack.TimeToPitstop.TotalSeconds == 0)
-                {
-                    _carFuel = FuelLevel;
-                }
+                    ShowMessage(lapSeconds, prevLapSeconds, lapDistance, prevLapDistance, _carFuel, _lapCount);
+                }          
                 if (lapSeconds > 1)
                 {
-                    if (lapSeconds % _carConfiguration.TimePerLap.TotalSeconds == 0)
+                    // update car fuel
+                    if (lapSeconds % 10 == 0)
                     {
-                        if (LapCount == _raceTrack.NumberOfLaps)
-                        {
-                            _status = IRaceCar.Status.Complete;
-                            isRuning = false;
-                        }
-                        LapCount++;
-                        lapStopWatch.Reset();
-                        lapSeconds = 0;
-                        lapDistance = 0;
-                        lapStopWatch.Start();
+                        UpdateFuel(ref lapDistance, ref prevLapDistance, ref _carFuel);
                     }
+                    // Car is fuelled up to the same level each pitstop
+                    if (((int)lapSeconds) % (int)RaceTrack.TimeToPitstop.TotalSeconds == 0)
+                    {
+                        _carFuel = FuelLevel;
+                    }
+                    LapCounts(ref isRuning, ref lapSeconds, ref prevLapSeconds, ref lapDistance, ref prevLapDistance, ref lapStopWatch);
                 }
 
-                if (lapDistance >= (_raceTrack.LapDistrance * _raceTrack.NumberOfLaps) || LapCount > _raceTrack.NumberOfLaps)
+                isRuning = EndProcess(isRuning, lapDistance);
+            }
+        }
+
+        private void UpdateFuel(ref double lapDistance,ref double prevLapDistance, ref double _carFuel)
+        {
+            if (lapDistance > prevLapDistance)
+            { 
+                var consumed = ((lapDistance-prevLapDistance) * _carConfiguration.FuelConsumptionPerLap) / _raceTrack.LapDistrance;
+                prevLapDistance = lapDistance;
+                _carFuel = _carFuel - consumed;
+                Console.WriteLine($"consume: {consumed}, capacity: {FuelLevel}, carFuel {_carFuel}");
+            }
+            
+            if (_carFuel > _carConfiguration.FuelCapacity)
+            {
+                throw new InvalidOperationException("car fuel exception");
+            }
+            if (_carFuel < 0)
+            {
+                throw new ArgumentOutOfRangeException("Fuel consumption cannot be negative.");
+            }
+        }
+
+        private void LapCounts(ref bool isRuning, ref double lapSeconds, ref double preLapSeconds, ref double lapDistance, ref double prevLapDistance, ref Stopwatch lapStopWatch)
+        {
+            if (lapSeconds % _carConfiguration.TimePerLap.TotalSeconds == 0)
+            {
+                if (LapCount == _raceTrack.NumberOfLaps)
                 {
                     _status = IRaceCar.Status.Complete;
                     isRuning = false;
                 }
+                LapCount++;
+                Reset(ref lapSeconds, ref preLapSeconds, ref lapDistance, ref prevLapDistance, ref lapStopWatch);
             }
+        }
+
+        private bool EndProcess(bool isRuning, double lapDistance)
+        {
+            if (lapDistance >= (_raceTrack.LapDistrance * _raceTrack.NumberOfLaps) || LapCount > _raceTrack.NumberOfLaps)
+            {
+                _status = IRaceCar.Status.Complete;
+                isRuning = false;
+            }
+
+            return isRuning;
+        }
+
+        private void Reset(ref double lapSeconds, ref double prevLapSeconds, ref double lapDistance, ref double prevLapDistance, ref Stopwatch lapStopWatch)
+        {
+            lapStopWatch.Reset();
+            lapSeconds = 0;
+            prevLapSeconds = 0;
+            lapDistance = 0;
+            prevLapDistance = 0;
+            lapStopWatch.Start();
+        }
+
+        private void ShowMessage(double lapSeconds, double prevLapSeconds, double lapDistance, double prevLapDistance, double _carFuel, double _lapCount)
+        {
+            Console.WriteLine("");
+            Console.WriteLine($"Lap Seconds {lapSeconds} Prev Lap Seconds {prevLapSeconds}");            
+            Console.WriteLine($"Lap Distance {lapDistance} Prev Lap Distance {prevLapDistance}");            
+            Console.WriteLine($"car fuel {_carFuel} Lap Count {_lapCount}");
+            Console.WriteLine("");
         }
 
         public IRaceCar.Status GetRaceCarStatus()
