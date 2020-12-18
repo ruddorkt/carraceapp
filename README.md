@@ -26,4 +26,8 @@ o   Car is fuelled up to the same level each pitstop
 
 o   Pitstop times are static
 
+<<<<<<< HEAD
 o   Lap times are consistent
+=======
+o   Lap times are consistent
+>>>>>>> 3580e1c25326cf736df120c49a0ed1b9611b8189
