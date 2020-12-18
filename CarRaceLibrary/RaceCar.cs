@@ -45,7 +45,7 @@ namespace CarRaceLibrary
         }
 
         public Guid RaceCarId { get => _raceCarId; }
-        public int NumberOfLapsPassed 
+        int IRaceCar.NumberOfLapsPassed
         { 
             get => _numberOfLapsPassed; 
             set => _numberOfLapsPassed = value > _raceTrack.NumberOfLaps ? _raceTrack.NumberOfLaps : value; 
@@ -58,7 +58,7 @@ namespace CarRaceLibrary
         }
 
         public int LapCount { get => _lapCount; set => _lapCount = value; }
-        
+
         public async Task Run()
         {
             bool isRuning = true;
@@ -73,7 +73,7 @@ namespace CarRaceLibrary
             });
         }
 
-        private void Process(ref bool isRuning, ref long i, ref double lapSeconds, ref double lapDistance)
+        void Process(ref bool isRuning, ref long i, ref double lapSeconds, ref double lapDistance)
         {
             // Car if fuelled to its configuration at the start of the race
             _carFuel = _fuelLevel;
@@ -118,7 +118,7 @@ namespace CarRaceLibrary
             }
         }
 
-        private void UpdateFuel(ref double lapDistance,ref double prevLapDistance, ref double _carFuel)
+        public void UpdateFuel(ref double lapDistance,ref double prevLapDistance, ref double _carFuel)
         {
             if (lapDistance > prevLapDistance)
             { 
@@ -138,7 +138,7 @@ namespace CarRaceLibrary
             }
         }
 
-        private void LapCounts(ref bool isRuning, ref double lapSeconds, ref double preLapSeconds, ref double lapDistance, ref double prevLapDistance, ref Stopwatch lapStopWatch)
+        void LapCounts(ref bool isRuning, ref double lapSeconds, ref double preLapSeconds, ref double lapDistance, ref double prevLapDistance, ref Stopwatch lapStopWatch)
         {
             if (lapSeconds % _carConfiguration.TimePerLap.TotalSeconds == 0)
             {
@@ -152,7 +152,7 @@ namespace CarRaceLibrary
             }
         }
 
-        private bool EndProcess(bool isRuning, double lapDistance)
+        bool EndProcess(bool isRuning, double lapDistance)
         {
             if (lapDistance >= (_raceTrack.LapDistrance * _raceTrack.NumberOfLaps) || LapCount > _raceTrack.NumberOfLaps)
             {
@@ -163,7 +163,7 @@ namespace CarRaceLibrary
             return isRuning;
         }
 
-        private void Reset(ref double lapSeconds, ref double prevLapSeconds, ref double lapDistance, ref double prevLapDistance, ref Stopwatch lapStopWatch)
+        void Reset(ref double lapSeconds, ref double prevLapSeconds, ref double lapDistance, ref double prevLapDistance, ref Stopwatch lapStopWatch)
         {
             lapStopWatch.Reset();
             lapSeconds = 0;
@@ -182,9 +182,10 @@ namespace CarRaceLibrary
             Console.WriteLine("");
         }
 
-        public IRaceCar.Status GetRaceCarStatus()
+        IRaceCar.Status IRaceCar.GetRaceCarStatus()
         {
             return _status;
         }
+
     }
 }
