@@ -1,4 +1,7 @@
-﻿using System;
+﻿// **********************************************
+// Copyright (c) RUDDOR_KT All rights reserved.   
+// **********************************************
+using System;
 
 namespace CarRaceLibrary
 {
