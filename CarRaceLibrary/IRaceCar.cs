@@ -16,11 +16,7 @@ namespace CarRaceLibrary
         Task Run();
         enum Status { Idle, Start, Running, Complete };
         Status GetRaceCarStatus();
-        //void Process(ref bool isRuning, ref long i, ref double lapSeconds, ref double lapDistance);
-        void UpdateFuel(ref double lapDistance, ref double prevLapDistance, ref double _carFuel);
-        //void LapCounts(ref bool isRuning, ref double lapSeconds, ref double preLapSeconds, ref double lapDistance, ref double prevLapDistance, ref Stopwatch lapStopWatch);
-        //bool EndProcess(bool isRuning, double lapDistance);
-        //void Reset(ref double lapSeconds, ref double prevLapSeconds, ref double lapDistance, ref double prevLapDistance, ref Stopwatch lapStopWatch);
+        void UpdateFuel();
 
     }
 }

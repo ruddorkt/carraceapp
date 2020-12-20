@@ -26,12 +26,12 @@ namespace CarRaceXUnitTest
             // act
             TestBase.GetCarConfigurationEntity(raceTrack, out trackId, out fuelCapacity, out timePerLap, out fuelConsumptionPerLap, out carConfig);
             var raceCar = new RaceCar(carConfig);
-            double lapDistance = 2d;
-            double prevLapDistance = 0d;
-            double carFuel = -10d;
+            raceCar.LapDistance = 2d;
+            raceCar.PrevLapDistance = 0d;
+            raceCar.CarFuel = -10d;
 
             // assert
-            Assert.Throws<ArgumentOutOfRangeException>(() => raceCar.UpdateFuel(ref lapDistance, ref prevLapDistance, ref carFuel));
+            Assert.Throws<ArgumentOutOfRangeException>(() => raceCar.UpdateFuel());
         }
 
         [Fact]
@@ -51,12 +51,12 @@ namespace CarRaceXUnitTest
             // act
             TestBase.GetCarConfigurationEntity(raceTrack, out trackId, out fuelCapacity, out timePerLap, out fuelConsumptionPerLap, out carConfig);
             var raceCar = new RaceCar(carConfig);
-            double lapDistance = 2d;
-            double prevLapDistance = 0d;
-            double carFuel = 30d;
+            raceCar.LapDistance = 2d;
+            raceCar.PrevLapDistance = 0d;
+            raceCar.CarFuel = 30d;
 
             // assert
-            Assert.Throws<InvalidOperationException>(() => raceCar.UpdateFuel(ref lapDistance, ref prevLapDistance, ref carFuel));
+            Assert.Throws<InvalidOperationException>(() => raceCar.UpdateFuel());
         }
     }
 }
