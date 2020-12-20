@@ -9,6 +9,7 @@ C:\Users\ruddo\source\repos\CarRaceApp\CarRaceXUnitTest\bin\Debug\net5.0\CarRace
 C:\Users\ruddo\source\repos\CarRaceApp\CarRaceXUnitTest\bin\Debug\net5.0\CarRaceXUnitTest.dll
 C:\Users\ruddo\source\repos\CarRaceApp\CarRaceXUnitTest\bin\Debug\net5.0\ref\CarRaceXUnitTest.dll
 C:\Users\ruddo\source\repos\CarRaceApp\CarRaceXUnitTest\bin\Debug\net5.0\CarRaceXUnitTest.pdb
+C:\Users\ruddo\source\repos\CarRaceApp\CarRaceXUnitTest\bin\Debug\net5.0\Castle.Core.dll
 C:\Users\ruddo\source\repos\CarRaceApp\CarRaceXUnitTest\bin\Debug\net5.0\Microsoft.VisualStudio.CodeCoverage.Shim.dll
 C:\Users\ruddo\source\repos\CarRaceApp\CarRaceXUnitTest\bin\Debug\net5.0\Microsoft.TestPlatform.CoreUtilities.dll
 C:\Users\ruddo\source\repos\CarRaceApp\CarRaceXUnitTest\bin\Debug\net5.0\Microsoft.TestPlatform.PlatformAbstractions.dll
@@ -17,6 +18,7 @@ C:\Users\ruddo\source\repos\CarRaceApp\CarRaceXUnitTest\bin\Debug\net5.0\Microso
 C:\Users\ruddo\source\repos\CarRaceApp\CarRaceXUnitTest\bin\Debug\net5.0\Microsoft.TestPlatform.CrossPlatEngine.dll
 C:\Users\ruddo\source\repos\CarRaceApp\CarRaceXUnitTest\bin\Debug\net5.0\Microsoft.TestPlatform.Utilities.dll
 C:\Users\ruddo\source\repos\CarRaceApp\CarRaceXUnitTest\bin\Debug\net5.0\Microsoft.VisualStudio.TestPlatform.Common.dll
+C:\Users\ruddo\source\repos\CarRaceApp\CarRaceXUnitTest\bin\Debug\net5.0\Moq.dll
 C:\Users\ruddo\source\repos\CarRaceApp\CarRaceXUnitTest\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Users\ruddo\source\repos\CarRaceApp\CarRaceXUnitTest\bin\Debug\net5.0\NuGet.Frameworks.dll
 C:\Users\ruddo\source\repos\CarRaceApp\CarRaceXUnitTest\bin\Debug\net5.0\xunit.abstractions.dll
@@ -100,5 +102,3 @@ C:\Users\ruddo\source\repos\CarRaceApp\CarRaceXUnitTest\obj\Debug\net5.0\CarRace
 C:\Users\ruddo\source\repos\CarRaceApp\CarRaceXUnitTest\obj\Debug\net5.0\ref\CarRaceXUnitTest.dll
 C:\Users\ruddo\source\repos\CarRaceApp\CarRaceXUnitTest\obj\Debug\net5.0\CarRaceXUnitTest.pdb
 C:\Users\ruddo\source\repos\CarRaceApp\CarRaceXUnitTest\obj\Debug\net5.0\CarRaceXUnitTest.genruntimeconfig.cache
-C:\Users\ruddo\source\repos\CarRaceApp\CarRaceXUnitTest\bin\Debug\net5.0\Castle.Core.dll
-C:\Users\ruddo\source\repos\CarRaceApp\CarRaceXUnitTest\bin\Debug\net5.0\Moq.dll

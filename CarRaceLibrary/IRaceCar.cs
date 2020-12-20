@@ -17,6 +17,12 @@ namespace CarRaceLibrary
         enum Status { Idle, Start, Running, Complete };
         Status GetRaceCarStatus();
         void UpdateFuel();
-
+        int LapCount { get; set; }
+        double LapSeconds { get; set; }
+        double PrevLapSeconds { get; set; }
+        double LapDistance { get; set; }
+        double PrevLapDistance { get; set; }
+        Stopwatch LapStopwatch { get; set; }
+        double CarFuel { get; set; }
     }
 }
