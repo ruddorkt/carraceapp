@@ -1,4 +1,7 @@
-﻿using CarRaceLibrary;
+﻿// **********************************************
+// Copyright (c) KANG TAN All rights reserved.   
+// **********************************************
+using CarRaceLibrary;
 using System;
 using System.Collections.Generic;
 using System.Linq;

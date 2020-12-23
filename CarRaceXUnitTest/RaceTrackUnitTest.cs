@@ -1,3 +1,6 @@
+// **********************************************
+// Copyright (c) KANG TAN All rights reserved.   
+// **********************************************
 using CarRaceLibrary;
 using System;
 using Xunit;

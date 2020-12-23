@@ -1,5 +1,5 @@
 ﻿// **********************************************
-// Copyright (c) RUDDOR_KT All rights reserved.   
+// Copyright (c) KANG TAN All rights reserved.   
 // **********************************************
 using System;
 using System.Collections.Generic;
