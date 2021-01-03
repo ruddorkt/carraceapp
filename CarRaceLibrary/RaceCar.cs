@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace CarRaceLibrary
@@ -189,6 +190,7 @@ namespace CarRaceLibrary
         private void ShowMessage()
         {
             Console.WriteLine("");
+            Console.WriteLine($"Current Thread Id: {Thread.CurrentThread.ManagedThreadId}");
             Console.WriteLine($"Lap Seconds {_lapSeconds} Prev Lap Seconds {_prevLapSeconds}");            
             Console.WriteLine($"Lap Distance {_lapDistance} Prev Lap Distance {_prevLapDistance}");            
             Console.WriteLine($"car fuel {_carFuel} Lap Count {_lapCount}");

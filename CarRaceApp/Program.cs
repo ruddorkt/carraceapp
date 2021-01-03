@@ -5,6 +5,7 @@ using CarRaceLibrary;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace CarRaceApp
@@ -20,6 +21,7 @@ namespace CarRaceApp
             RaceCar car1 = new RaceCar(carConiguration);
             RaceCar car2 = new RaceCar(carConiguration);
             List<RaceCar> raceCars = new List<RaceCar>();
+            Console.WriteLine($"Current Thread Id: {Thread.CurrentThread.ManagedThreadId}");
             raceCars.Add(car1);
             raceCars.Add(car2);
             //await RunAll(raceCars);

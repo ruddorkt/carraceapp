@@ -1,6 +1,7 @@
 "# carraceapp" 
-Code Challenge
-Create a race care setup selector. The purpose of the program is to rank a given set of car configurations for a particular, given, race track, based on the full race completion time.
+	Code Challenge
+	
+	Create a race care setup selector. The purpose of the program is to rank a given set of car configurations for a particular, given, race track, based on the full race completion time.
           The 2 main entities are: Race Track and Car Configuration
 
           The race track has the following properties:
@@ -26,5 +27,7 @@ Create a race care setup selector. The purpose of the program is to rank a given
    Car is fuelled up to the same level each pitstop
 
    Pitstop times are static
+
+
 
 
